@@ -6,8 +6,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'RadialGradient': 'hsl(214, 47%, 23%) to hsl(237, 49%, 15%)',
-      }
+        'f': 'hsl(214, 47%, 23%) ',
+        't': 'hsl(237, 49%, 15%)'
+      },
+     
       
     },
   },
