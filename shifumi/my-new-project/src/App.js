@@ -6,6 +6,7 @@ import Feuille from "./components/Feuille"
 import Pierre from "./components/Pierre"
 import Ciseaux from "./components/Ciseaux"
 import Win from "./components/Win"
+import Lose from "./components/Lose"
 
 export default function App() {
 
@@ -34,15 +35,16 @@ export default function App() {
     { page  == 1 &&  <Feuille setpage={setpage}   />  }
     { page  == 2 &&  <Ciseaux setpage={setpage}  /> }
     { page  == 3 &&  <Pierre setpage={setpage}  /> }
-    
+
     { enemie == 1 && page == 2 ? <Win setenemie={setenemie} setpage={setpage}/>:null}
-    { enemie == 2 && page == 1 ? <Win setenemie={setenemie} setpage={setpage}/>:null}
-    { enemie == 3 && page == 3 ? <Win setenemie={setenemie} setpage={setpage}/>:null}
+    { enemie == 3 && page == 1 ? <Win setenemie={setenemie} setpage={setpage}/>:null}
+    { enemie == 2 && page == 3 ? <Win setenemie={setenemie} setpage={setpage}/>:null}
+
   
     
     {enemie == 1 && <Feuille />}                                                                          
-    {enemie == 2 && <Pierre />}
-    {enemie == 3 && <Ciseaux />}
+    {enemie == 3 && <Pierre />}
+    {enemie == 2 && <Ciseaux />}
   
     </div>
      
