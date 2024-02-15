@@ -40,6 +40,11 @@ export default function App() {
     { enemie == 3 && page == 1 ? <Win setenemie={setenemie} setpage={setpage}/>:null}
     { enemie == 2 && page == 3 ? <Win setenemie={setenemie} setpage={setpage}/>:null}
 
+    { enemie == 2 && page == 1 ? <Lose setenemie={setenemie} setpage={setpage}/>:null}
+    { enemie == 1 && page == 3 ? <Lose setenemie={setenemie} setpage={setpage}/>:null}
+    { enemie == 3 && page == 2 ? <Lose setenemie={setenemie} setpage={setpage}/>:null}
+
+  
   
     
     {enemie == 1 && <Feuille />}                                                                          
