@@ -11,30 +11,39 @@ export default function App() {
 
 
   const [rule, setrule] = useState(0)
-  const [count, setcount] = useState(0)
   const [page, setpage] = useState(0)
   const [enemie, setenemie] = useState(0)
   const [score, setscore] = useState(0)
+  const [win, setWin] = useState(false)
+  
+
 
   return (
+    
     <section className=" h-screen p-20 relative bg-gradient-to-b from-f to-t flex justify-center items-center flex-col">
       <div className="w-[60%] flex justify-start border-solid border-[2px] mb-6 border-white rounded-xl p-3  ">
         <div className="w-[60%] flex justify-start items-center"><img src={titre} alt="" /></div>
         
         <div className="h-[95%] w-[300px] bg-white flex flex-col justify-center items-center text-[40px] rounded-2xl">
             <h1>counter</h1>
-            <h1>{count}</h1>
+            <h1>{score}</h1>
         </div>
       </div>
-      <div className="flex">
+      <div className="flex gap-6 grid-cols-2 text-white">
     { page  == 0 &&  <Acceuil setpage={setpage}  setenemie={setenemie}/> }
-    { page  == 1 &&  <Feuille setpage={setpage} setcount={setcount}  /> }
-    { page  == 2 &&  <Ciseaux setpage={setpage} setcount={setcount}  /> }
-    { page  == 3 &&  <Pierre setpage={setpage} setcount={setcount}  /> }
-    {score == 1 && <Win setenemie={setenemie} />}
-    {enemie == 1 && <Feuille />}
+    { page  == 1 &&  <Feuille setpage={setpage}   />  }
+    { page  == 2 &&  <Ciseaux setpage={setpage}  /> }
+    { page  == 3 &&  <Pierre setpage={setpage}  /> }
+    
+    { enemie == 1 && page == 2 ? <Win setenemie={setenemie} setpage={setpage}/>:null}
+    { enemie == 2 && page == 1 ? <Win setenemie={setenemie} setpage={setpage}/>:null}
+    { enemie == 3 && page == 3 ? <Win setenemie={setenemie} setpage={setpage}/>:null}
+  
+    
+    {enemie == 1 && <Feuille />}                                                                          
     {enemie == 2 && <Pierre />}
     {enemie == 3 && <Ciseaux />}
+  
     </div>
      
 

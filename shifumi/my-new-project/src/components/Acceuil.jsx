@@ -1,5 +1,5 @@
 import React from 'react'
-import triangle from './../assets/image/bg-triangle.svg'
+
 import pierre from './../assets/image/icon-rock.svg'
 import feuille from './../assets/image/icon-paper.svg'
 import ciseaux from './../assets/image/icon-scissors.svg'
@@ -9,8 +9,9 @@ import Ciseaux from './Ciseaux'
 
 export default function Acceuil(props) {
   let r =()=>{
-   return Math.floor(Math.random() * 3)
+   return Math.round(Math.random() * (3 - 1) + 1);
   } ;
+
   <Feuille r={r} />;
   <Pierre r={r} />;
   <Ciseaux r={r} />;
