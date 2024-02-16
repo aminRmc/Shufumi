@@ -59,7 +59,7 @@ export default function App() {
     {enemie == 3 && <Pierre />}
     {enemie == 2 && <Ciseaux />}
     {score<0 && setscore(0)}
-    {score == 5 && setpage(4)}
+    {/* {score==5?setWin && setenemie(0):null} */}
     </div>
      
 
